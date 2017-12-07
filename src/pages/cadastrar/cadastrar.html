@@ -1,0 +1,50 @@
+<h1>Teste Cadastrar</h1>
+
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Cadastrar</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+
+      <form [formGroup]="pessoa" (ngSubmit)="Cadastrar()">
+        <ion-item>
+          <ion-label stacked>Nome</ion-label>
+          <ion-input type="text" formControlName="nome"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" formControlName="dtNascimento"></ion-datetime>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Sexo</ion-label>
+          <ion-select type="text" formControlName="sexo">
+            <ion-option value="Feminino">Feminino</ion-option>
+            <ion-option value="Masculino">Masculino</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked type="email">Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label stacked type="password">Senha</ion-label>
+          <ion-input type="password" formControlName="senha"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked type="password">Confirmar</ion-label>
+          <ion-input type="password" formControlName="confirmarSenha"></ion-input>
+        </ion-item>
+    
+        <button ion-button type="submit" [disabled]="!pessoa.valid">Cadastrar</button>
+      </form>
+    </ion-content>
